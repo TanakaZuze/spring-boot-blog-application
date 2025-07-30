@@ -36,7 +36,11 @@ public class PostService implements PostServiceI{
 
     @Override
     public Post updatePost(Post post) {
-        return null;
+        Post updatedPost= new Post();
+        updatedPost.setTitle(post.getTitle());
+        updatedPost.setContent(post.getContent());
+
+        return postRepository.save(updatedPost);
     }
 
 }
